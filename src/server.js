@@ -6,7 +6,7 @@ require("dotenv").config()
 
 
 
-
+//backend CNC
 const routes = require("./routes");
 
 const app = express();
@@ -26,8 +26,6 @@ const io = require('socket.io')(server, {
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true
-}).then((result) =>{
-    console.log("conectado com o banco")
 })
 
 io.on('connection', socket =>{
