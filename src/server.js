@@ -14,14 +14,7 @@ const server = require('http').createServer(app);
 
 const connectedUsers = {};
 
-const io = require('socket.io')(server, {
-    cors: {
-        origin: "https://agendamentoscnc.herokuapp.com",
-        methods: ["GET", "POST"],
-        allowedHeaders: ["my-custom-header"],
-        credentials: true
-    }
-});
+const io = require('socket.io')(server);
 
 
 mongoose.connect(process.env.MONGO_URL, {
