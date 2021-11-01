@@ -12,7 +12,6 @@ const routes = require("./routes");
 const app = express();
 const server = require('http').createServer(app);
 
-const connectedUsers = {};
 
 const io = require('socket.io')(server, {
     cors: {
@@ -23,6 +22,7 @@ const io = require('socket.io')(server, {
     }
 });
 
+const connectedUsers = {};
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true
